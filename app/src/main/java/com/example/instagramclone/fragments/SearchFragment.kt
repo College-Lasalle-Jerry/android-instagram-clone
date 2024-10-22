@@ -23,7 +23,6 @@ import com.hendraanggrian.appcompat.socialview.widget.SocialAutoCompleteTextView
 class SearchFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var recyclerViewTags: RecyclerView
     private lateinit var userAdapter: UserAdapter
     private lateinit var mUsers: MutableList<User>
 
