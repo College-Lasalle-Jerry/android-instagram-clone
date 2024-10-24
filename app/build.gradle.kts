@@ -53,6 +53,8 @@ dependencies {
 
     // auto-complete widgets
     implementation ("com.hendraanggrian.appcompat:socialview-autocomplete:0.1")
+
+//    implementation ("com.rengwuxian.materialedittext:library:2.1.4")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

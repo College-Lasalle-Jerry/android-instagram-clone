@@ -67,8 +67,18 @@ class UserAdapter(
 
         holder.username.setText(user.username)
         holder.fullname.setText(user.name)
-        Picasso.get().load(user.imageurl).placeholder(R.drawable.ic_profile)
-            .into(holder.image_profile)
+//        Picasso.get().load(user.imageurl).placeholder(R.drawable.ic_profile)
+//            .into(holder.image_profile)
+
+        if (!user.imageurl.isNullOrEmpty()) {
+            Picasso.get().load(user.imageurl)
+                .placeholder(R.drawable.ic_profile)  // Default placeholder
+                .into(holder.image_profile)
+        } else {
+            // Load a placeholder image directly if the URL is empty
+            Picasso.get().load(R.drawable.ic_profile)
+                .into(holder.image_profile)
+        }
         isFollowed(user.id, holder.btn_follow)
 
         if (user.id.equals(firebaseUser!!.uid)) {

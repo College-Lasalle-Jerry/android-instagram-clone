@@ -214,8 +214,17 @@ class ProfileFragment : Fragment() {
                 //                if(!user.getImageurl().equals("default")){
 //
 //                }
-                Picasso.get().load(user.imageurl).placeholder(R.drawable.ic_profile)
-                    .into(image_profile)
+//                Picasso.get().load(user.imageurl).placeholder(R.drawable.ic_profile)
+//                    .into(image_profile)
+                if (!user.imageurl.isNullOrEmpty()) {
+                    Picasso.get().load(user.imageurl)
+                        .placeholder(R.drawable.ic_profile)  // Default placeholder
+                        .into(image_profile)
+                } else {
+                    // Load a placeholder image directly if the URL is empty
+                    Picasso.get().load(R.drawable.ic_profile)
+                        .into(image_profile)
+                }
                 //                image_profile.setImageResource(R.drawable.default_avatar);
                 username.setText(user.username)
                 fullname.setText(user.name)
